@@ -20,8 +20,7 @@ public class CreditCard {
         this.cardType = cardType;
     }
 
-    public CreditCard() {
-    }
+
 
     public String getCardNo() {
         return cardNo;

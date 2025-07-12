@@ -59,10 +59,38 @@ public class CreditCardController
             return;
         }
 
-        if (gatewayNameComboBox.getValue().equals("Visa") && Integer.parseInt(cardNoTextField.getText().charAt(0) == "4"))
+        if (gatewayNameComboBox.getValue().equals("Visa") && cardNoTextField.getText().charAt(0) != '4'){
+            showAlert("Invalid card Number");
+            return;
+
+        }
+        else if(gatewayNameComboBox.getValue().equals("Master Card") && cardNoTextField.getText().charAt(0) != '5'){
+            showAlert("Invalid card Number");
+        }
+        CreditCard creditCard = new CreditCard(
+                cardNoTextField.getText(),
+                holderNameTextField.getText(),
+                dateExpDatePicket.getValue(),
+                gatewayNameComboBox.getValue(),
+                Float.parseFloat(creditLimitTextfield.getText()),
+                cardTypeComboBox.getValue()
+
+
+
+        );
+
+        cardList.add(creditCard);
+
+        creditCardTableView.getItems().clear();
+        creditCardTableView.getItems().addAll(cardList);
 
 
     }
+
+
+
+
+
 
     public void showAlert(String message){
         Alert a = new Alert(Alert.AlertType.WARNING);
