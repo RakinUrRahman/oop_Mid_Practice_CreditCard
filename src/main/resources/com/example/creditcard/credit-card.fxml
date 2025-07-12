@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="587.0" prefWidth="784.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.creditcard.CreditCardController">
+   <children>
+      <TextField fx:id="cardNoTextField" layoutX="150.0" layoutY="60.0" />
+      <Text layoutX="62.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Number:" />
+      <TextField fx:id="holderNameTextField" layoutX="150.0" layoutY="98.0" />
+      <Text layoutX="62.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Holder Name:" />
+      <ComboBox fx:id="gatewayNameComboBox" layoutX="105.0" layoutY="140.0" prefWidth="150.0" promptText="gatewayName" />
+      <DatePicker fx:id="dateExpDatePicket" layoutX="329.0" layoutY="60.0" promptText="Date of Expiry" />
+      <TextField fx:id="creditLimitTextfield" layoutX="149.0" layoutY="174.0" />
+      <Text layoutX="61.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Credit Limit:" />
+      <ComboBox fx:id="cardTypeComboBox" layoutX="105.0" layoutY="224.0" prefWidth="150.0" promptText="Card Type" />
+      <Button layoutX="391.0" layoutY="162.0" mnemonicParsing="false" onAction="#handleAddCreditCardButton" text="Validate &amp; Add New Card to ArrayList" />
+      <TableView fx:id="creditCardTableView" layoutX="64.0" layoutY="324.0" prefHeight="200.0" prefWidth="654.0">
+        <columns>
+          <TableColumn fx:id="cardNoCol" prefWidth="75.0" text="Card No." />
+          <TableColumn fx:id="holderNameCol" prefWidth="147.20001220703125" text="Holder Name " />
+            <TableColumn fx:id="gatewayCol" prefWidth="100.0" text="Gateway Name" />
+            <TableColumn fx:id="dateOfExpCol" prefWidth="107.20001220703125" text="Date Of Exp." />
+            <TableColumn fx:id="creditLimitCol" prefWidth="120.800048828125" text="Credit Limit" />
+            <TableColumn fx:id="cardTypeCol" prefWidth="105.60009765625" text="Card Type " />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
